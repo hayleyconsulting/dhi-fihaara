@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="custom_assets_frontend" inherit_id="web_editor.assets_frontend" name="Portal Assets" priority="15">
+            <xpath expr="//script[last()]" position="after">
+                <script type="text/javascript" src="/social_media_sharing_product/static/src/js/product_share.js"></script>
+            </xpath>
+        </template>
+
+        <!-- Share on social networks -->
+        <template id='custom_social_network_share' name="Social Media Share">
+            <div class="btn-group custom_social_network" role="group">
+                <t t-set="custom_share_social_media_list" t-value="record._get_custom_share_social_media_list()"/>
+                <div class="container">
+                    <!-- Facebook Button -->
+                    <t t-if="'facebook' in custom_share_social_media_list">
+                        <a t-attf-href="https://www.facebook.com/sharer/sharer.php?u=#{record._custom_social_website_url()}" class="btn border bg-white o_wslides_js_social_share" social-key="facebook" aria-label="Share on Facebook" title="Share on Facebook" style="color:blue;">
+                                <i class="fa fa-facebook-square fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Whatsup Button -->
+                    <t t-if="'whatsapp' in custom_share_social_media_list">
+                        <!-- Desktop Whatsup Button -->
+                        <a t-attf-href="https://web.whatsapp.com/send?text=data-href:#{record._custom_social_website_url()}" class="btn border bg-white o_wslides_js_social_share desktop_whatsapp" social-key="whatsapp" aria-label="Share on Whatsapp" title="Share on Whatsapp" data-action="share/whatsapp/share" style="color: #04B404;">
+                            <i class="fa fa-whatsapp fa-2x"/>
+                        </a>
+
+                        <!-- Mobile Whatsup Button -->
+                        <a t-attf-href="https://api.whatsapp.com/send?text=data-href:#{record._custom_social_website_url()}" class="btn border bg-white o_wslides_js_social_share mobile_whatsapp" social-key="whatsapp" aria-label="Share on Whatsapp" title="Share on Whatsapp" data-action="share/whatsapp/share" style="color: #04B404;">
+                            <i class="fa fa-whatsapp fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Twitter Button -->
+                    <t t-if="'twitter' in custom_share_social_media_list">
+                        <a t-attf-href="https://twitter.com/intent/tweet?text=#{record.name}&amp;url=#{record._custom_social_website_url()}" class="btn border bg-white o_wslides_js_social_share" social-key="twitter" aria-label="Share on Twitter" title="Share on Twitter"  style="color:#007FFF;">
+                            <i class="fa fa-twitter-square fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Linkedin Button -->
+                    <t t-if="'linkedin' in custom_share_social_media_list">
+                        <a t-attf-href="http://www.linkedin.com/shareArticle?mini=true&amp;url=#{record._custom_social_website_url()}&amp;title=#{record.name}&amp;" social-key="linkedin" class="btn border bg-white o_wslides_js_social_share" aria-label="Share on LinkedIn" title="Share on LinkedIn" style="color:blue;">
+                            <i class="fa fa-linkedin-square fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Email Button -->
+                    <t t-if="'mail' in custom_share_social_media_list">
+                        <a t-attf-href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;tf=1&amp;to=&amp;su=Your+Subject+here&amp;body='#{record._custom_social_website_url()}'&amp;ui=2&amp;tf=1&amp;pli=1" social-key="email" class="btn border bg-white o_wslides_js_social_share" aria-label="Share on Email" title="Share on Email" style="color:red;">
+                            <i class="fa fa-envelope-square fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Blogger Button -->
+                    <t t-if="'blogger' in custom_share_social_media_list">
+                        <a t-attf-href="https://www.blogger.com/blog-this.g?u=#{record._custom_social_website_url()}&amp;n=#{record.name};&amp;t=#{record._custom_social_website_url()}" social-key="blogger" class="btn border bg-white o_wslides_js_social_share" aria-label="Share on Blogger" title="Share on Blogger" style="color:#FF6600;">
+                            <i class="fa fa-bold fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Reddit Button -->
+                    <t t-if="'reddit' in custom_share_social_media_list">
+                        <a t-attf-href="https://www.reddit.com/submit?url=#{record._custom_social_website_url()}&amp;title=#{record.name}" class="btn border bg-white o_wslides_js_social_share" social-key="reddit" aria-label="Share on Reddit" title="Share on Reddit" style="color:red;">
+                            <i class="fa fa-reddit fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Tumblr Button -->
+                    <t t-if="'tumblr' in custom_share_social_media_list">
+                        <a t-attf-href="http://tumblr.com/widgets/share/tool?caption=#{record.name}&amp;canonicalUrl=#{record._custom_social_website_url()}" class="btn border bg-white o_wslides_js_social_share" social-key="tumblr" aria-label="Share on Tumblr" title="Share on Tumblr" style="color:#003153;">
+                            <i class="fa fa-tumblr-square fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Pinterest Button -->
+                    <!-- <t t-if="'pinterest' in custom_share_social_media_list">
+                        <a t-attf-href="http://pinterest.com/pin/create/link/?url=#{record._custom_social_website_url()}" class="btn border bg-white o_wslides_js_social_share" social-key="pinterest" aria-label="Share on Pinterest" title="Share on Pinterest" style="color:#800000;">
+                            <i class="fa fa-pinterest-square fa-2x"/>
+                        </a>
+                    </t> -->
+
+                    <!-- BKohtakte Button -->
+                    <t t-if="'vk' in custom_share_social_media_list">
+                        <a t-attf-href="http://vk.com/share.php?url=#{record._custom_social_website_url()}" class="btn border bg-white o_wslides_js_social_share" social-key="bkohtakte" aria-label="Share on BKohtakte" title="Share on BKohtakte" style="color:#007FFF;">
+                            <i class="fa fa-vk fa-2x"/>
+                        </a>
+                    </t>
+
+                    <!-- Mix Button -->
+                    <t t-if="'mix' in custom_share_social_media_list">
+                        <a t-attf-href="https://mix.com/add?url=#{record._custom_social_website_url()}" class="btn border bg-white o_wslides_js_social_share" social-key="mix" aria-label="Share on Mix" title="Share on Mix" style="color:#FF6600;">
+                            <i class="fa fa-maxcdn fa-2x"/>
+                        </a>
+                    </t>
+                </div>
+            </div>
+        </template>
+
+        <template id="custom_products_sharing_btn" inherit_id="website_sale.product" name="Product Share">
+            <xpath expr="//a[@id='add_to_cart']" position="after">
+                <t t-if="product">
+                    <a role="button" class="btn btn-info mt16 btn-lg custom_social_network_shar_btn" title="Share Channel" aria-label="Share Channel" data-toggle="modal" data-target="#slideChannelShareModal" style="color:white;">
+                        <i class="fa fa-share-alt"/> Share
+                    </a>
+
+                    <div class="modal fade" id="slideChannelShareModal" tabindex="-1" role="dialog" aria-labelledby="slideChannelShareModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="slideChannelShareModalLabel">
+                                        Share
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span>&amp;times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>Share on Social Networks</h5>
+                                    <t t-call="social_media_sharing_product.custom_social_network_share">
+                                        <t t-set="record" t-value="product"/>
+                                    </t>
+                                    <h5 class="mt16">Share Link</h5>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control o_wslides_js_share_link" readonly="readonly" onclick="this.select();"
+                                            t-att-value="product._custom_social_website_url()"/>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary o_clipboard_button" >
+                                                <span class="fa fa-clipboard"> Copy Text</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </xpath>
+        </template>
+        
+    </data>
+</odoo>
