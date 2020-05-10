@@ -2,4 +2,6 @@
 # Part of Odoo Module Developed by 73lines
 # See LICENSE file for full copyright and licensing details.
 
-# from . import product_ribbon
+from odoo import fields, models
+
+
