@@ -2,4 +2,4 @@
 # Part of Odoo Module Developed by 73lines
 # See LICENSE file for full copyright and licensing details.
 
-from . import main
+# from . import main
