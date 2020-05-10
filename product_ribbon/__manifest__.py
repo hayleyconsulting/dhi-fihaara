@@ -11,10 +11,10 @@
     'website': 'www.hayleyconsulting.com',
     'depends': ['website_sale'],
     'data': [
-        'security/ir.model.access.csv',
-        'views/assets.xml',
-        'views/templates.xml',
-        'views/product_ribbon_view.xml',
+        # 'security/ir.model.access.csv',
+        # 'views/assets.xml',
+        # 'views/templates.xml',
+        # 'views/product_ribbon_view.xml',
     ],
     'images': [
         'static/description/ecommerce_all_in_one_73lines.png',
