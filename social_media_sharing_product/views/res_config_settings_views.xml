@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="custom_res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.website.sale</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <div id="sale_checkout_settings" position="after">
+                <h2>Share eCommerce product on social media</h2>
+                <div class="row mt16 o_settings_container" id="sale_custom_social_media_settings">
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_facebook">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_facebook"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_facebook"/> <span style="color:blue;" class="fa fa-facebook-square"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_twitter">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_twitter"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_twitter"/> <i class="fa fa-twitter-square" style="color: #007FFF;"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_whatsapp">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_whatsapp"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_whatsapp"/> <i class="fa fa-whatsapp" style="color: #04B404;"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_linkedin">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_linkedin"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_linkedin"/> <i class="fa fa-linkedin-square" style="color:blue;"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_mail">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_mail"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_mail"/> <i class="fa fa-envelope-square" style="color:red;"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_blogger">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_blogger"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_blogger"/> <i class="fa fa-bold" style="color:#FF6600;"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_reddit">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_reddit"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_reddit"/> <i class="fa fa-reddit" style="color:red;"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_tumblr">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_tumblr"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_tumblr"/> <i class="fa fa-tumblr-square" style="color:#003153;"/>
+                        </div>
+                    </div>
+                    <!-- <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_pinterest">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_pinterest"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_pinterest"/> <i class="fa fa-pinterest-square" style="color:#800000;"/>
+                        </div>
+                    </div> -->
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_vk">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_vk"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_vk"/> <i class="fa fa-vk" style="color:#007FFF;"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 o_setting_box" id="probc_social_media_mix">
+                        <div class="o_setting_left_pane">
+                            <field name="custom_social_media_mix"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="custom_social_media_mix"/> <i class="fa fa-maxcdn" style="color:#FF6600;"/>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </field>
+    </record>
+
+</odoo>
